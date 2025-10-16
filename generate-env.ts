@@ -1,4 +1,9 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync, mkdirSync, existsSync } from 'fs';
+
+const envDir = './src/environments';
+if (!existsSync(envDir)) {
+  mkdirSync(envDir, { recursive: true });
+}
 
 const env = {
   production: true,
@@ -11,4 +16,4 @@ const env = {
 
 const content = `export const environment = ${JSON.stringify(env, null, 2)};\n`;
 
-writeFileSync('./src/environments/environment.ts', content);
+writeFileSync(`${envDir}/environment.ts`, content);
