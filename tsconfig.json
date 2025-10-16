@@ -6,7 +6,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@environments/*": ["src/environments/*"]
+      "@environments/*": ["src/environments/environment.ts"]
     },
 
     "strict": true,
